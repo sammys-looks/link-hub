@@ -114,6 +114,51 @@
   }
 }
 
+    
+.zoomable {
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 15px;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+
 
   </style>
 </head>
@@ -131,17 +176,38 @@
   </p>
 </header>
 
+
 <div class="outfit-gallery">
   <img
-    src="images/outfit-001_01.png"
+    src="images/outfit-001.jpg"
     alt="Sammy modeling Outfit 001 - Front"
+    class="zoomable"
+    tabindex="0"
+    role="button"
   >
 
   <img
-    src="images/outfit-001_02.png"
+    src="images/outfit-001-back.jpg"
     alt="Sammy modeling Outfit 001 - Back"
+    class="zoomable"
+    tabindex="0"
+    role="button"
   >
 </div>
+
+<!-- Fullscreen image popup -->
+<div id="imageLightbox" class="lightbox"
+     role="dialog" aria-modal="true"
+     aria-label="Outfit image viewer"
+     hidden>
+  <button class="lightbox-close"
+          type="button"
+          aria-label="Close image viewer">
+    &times;
+  </button>
+  <img id="lightboxImage" alt="">
+</div>
+
 
 <h2>Shop the Look</h2>
 
@@ -184,5 +250,74 @@
       © 2026 Sammy's Looks
     </footer>
   </main>
+
+  
+<script>
+  const lightbox = document.getElementById("imageLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const closeButton = document.querySelector(".lightbox-close");
+  const galleryImages = document.querySelectorAll(".zoomable");
+
+  let previousFocus = null;
+
+  function openLightbox(img) {
+    previousFocus = document.activeElement;
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeButton.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightboxImage.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (previousFocus) previousFocus.focus();
+  }
+
+  galleryImages.forEach(img => {
+    img.addEventListener("click", () => openLightbox(img));
+
+    img.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(img);
+      }
+    });
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (lightbox.hidden) return;
+
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
+
+    if (e.key === "Tab") {
+      e.preventDefault();
+      closeButton.focus();
+    }
+  });
+
+  // Disable right-click on gallery and popup images
+  document.querySelectorAll(".zoomable, #lightboxImage")
+    .forEach(img => {
+      img.addEventListener("contextmenu", e => {
+        e.preventDefault();
+      });
+
+      img.addEventListener("dragstart", e => {
+        e.preventDefault();
+      });
+    });
+</script>
+
 </body>
 </html>
