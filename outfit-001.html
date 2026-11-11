@@ -87,6 +87,7 @@
     }
 
     
+
 .outfit-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -96,7 +97,9 @@
 
 .outfit-gallery img {
   width: 100%;
-  height: auto;
+  height: 350px;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 14px;
   display: block;
 }
@@ -105,7 +108,12 @@
   .outfit-gallery {
     grid-template-columns: 1fr;
   }
+
+  .outfit-gallery img {
+    height: 450px;
+  }
 }
+
 
   </style>
 </head>
