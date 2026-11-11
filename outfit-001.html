@@ -85,6 +85,28 @@
       font-size: 12px;
       line-height: 1.8;
     }
+
+    
+.outfit-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 25px auto;
+}
+
+.outfit-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .outfit-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -93,43 +115,51 @@
       ← Back to Outfits
     </a>
 
-    <header>
-      <h1>💕 Outfit 001</h1>
-      <p class="subtitle">
-        Love this look? Shop the pieces below!
-      </p>
-    </header>
+    
+<header>
+  <h1>💕 Outfit 001</h1>
+  <p class="subtitle">
+    Love this look? Shop the pieces below!
+  </p>
+</header>
 
-    <img
-      class="hero"
-      src="images/outfit-001.jpg"
-      alt="Sammy modeling Outfit 001"
-    >
+<div class="outfit-gallery">
+  <img
+    src="images/outfit-001_01.jpg"
+    alt="Sammy modeling Outfit 001 - Front"
+  >
 
-    <h2>Shop the Look</h2>
+  <img
+    src="images/outfit-001-02.jpg"
+    alt="Sammy modeling Outfit 001 - Back"
+  >
+</div>
+
+<h2>Shop the Look</h2>
+
 
     <section aria-label="Outfit shopping links">
       <!-- Replace # with actual affiliate URLs -->
 
       <div class="item">
         <span>👚 Top</span>
-        <a href="#">Shop</a>
+        <a href="https://link.amazon/B05BK0rNB">Shop</a>
       </div>
 
       <div class="item">
         <span>👖 Bottoms</span>
-        <a href="#">Shop</a>
+        <a href="https://link.amazon/B0hkvjC2B">Shop</a>
       </div>
 
       <div class="item">
         <span>👟 Shoes</span>
-        <a href="#">Shop</a>
+        <a href="https://link.amazon/B0hDLyk1q">Shop</a>
       </div>
 
-      <div class="item">
+      <!-- <div class="item">
         <span>👜 Accessories</span>
         <a href="#">Shop</a>
-      </div>
+      </div> -->
     </section>
 
     <footer>
