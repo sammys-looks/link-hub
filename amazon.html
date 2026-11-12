@@ -4,109 +4,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9edf0">
   <title>Amazon Finds | Sammy's Looks</title>
+
   <style>
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      padding: 28px 18px;
+      min-height: 100vh;
+      padding: 48px 20px 28px;
       background: linear-gradient(#f9edf0, #fff9f7);
       color: #543d47;
       font-family: Arial, sans-serif;
-      min-height: 100vh;
+      text-align: center;
     }
 
     main {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 36px;
+      max-width: 420px;
+      margin: 0 auto;
     }
 
     .back {
       display: inline-block;
       color: #806571;
       text-decoration: none;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
-    h1 { font-size: 30px; }
+    h1 {
+      font-size: 30px;
+      margin: 18px 0 8px;
+    }
 
     .subtitle {
+      line-height: 1.6;
+      margin-bottom: 35px;
       color: #806571;
-      line-height: 1.5;
     }
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .product {
+    .links a {
+      display: block;
+      padding: 22px 18px;
+      margin-bottom: 16px;
       background: white;
       border: 1px solid #f0dce3;
-      border-radius: 16px;
-      overflow: hidden;
-      padding-bottom: 16px;
-      text-align: center;
-    }
-
-    .product img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-    }
-
-    .product h3 {
-      font-size: 15px;
-      margin: 14px 10px;
-    }
-
-    .product a {
-      display: inline-block;
-      padding: 11px 18px;
-      background: #eac6d2;
+      border-radius: 14px;
       color: #543d47;
-      text-decoration: none;
-      border-radius: 10px;
+      font-size: 18px;
       font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 3px 12px #e4cbd440;
+      transition: transform .2s, background .2s;
+    }
+
+    .links a:hover {
+      transform: translateY(-2px);
+      background: #fff4f7;
+    }
+
+    .links a span {
+      display: block;
+      margin-top: 7px;
+      font-size: 13px;
+      font-weight: normal;
+      color: #806571;
     }
 
     footer {
       margin-top: 45px;
-      text-align: center;
-      color: #907984;
       font-size: 12px;
       line-height: 1.8;
-    }
-
-    @media (min-width: 650px) {
-      .products {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      color: #907984;
     }
   </style>
 </head>
+
 <body>
   <main>
-    <a class="back" href="index.html">← Back to My Links</a>
+
+    <a class="back" href="index.html">
+      ← Back to My Links
+    </a>
 
     <header>
       <h1>🛍️ Sammy's Amazon Finds</h1>
       <p class="subtitle">
-        My favorite fashion finds, accessories,
-        and little things I love. 💕
+        A little something for everyone! 💕
+        <br>
+        Browse my favorite finds below.
       </p>
     </header>
 
-    <section class="products">
-      <!-- Product cards will go here -->
-    </section>
+    <nav class="links" aria-label="Shopping categories">
+
+      <a href="amazon/for-him.html">
+        🎁 For Him
+        <span>
+          Gifts, gadgets & everyday essentials
+        </span>
+      </a>
+
+      <a href="amazon/for-her.html">
+        💕 For Her
+        <span>
+          Fashion, beauty & thoughtful gifts
+        </span>
+      </a>
+
+    </nav>
 
     <footer>
       As an Amazon Associate I earn from
@@ -115,7 +121,10 @@
       Some links may earn commissions.
       <br>
       Sammy is a fictional AI-created influencer.
+      <br><br>
+      © 2026 Sammy's Looks
     </footer>
+
   </main>
 </body>
 </html>
