@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Friday Night, Three Ways | Sammy's Looks</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 18px;
+      background: linear-gradient(#f9edf0, #fff9f7);
+      color: #543d47;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    
+.back {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 28px;
+  color: #806571;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+    header { text-align: center; }
+
+    h1 { font-size: 30px; }
+
+    .subtitle {
+      color: #806571;
+      line-height: 1.6;
+    }
+
+    .hero {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 25px auto;
+      border-radius: 18px;
+    }
+
+    h2 {
+      margin: 30px 0 18px;
+      font-size: 21px;
+      text-align: center;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      background: white;
+      border: 1px solid #f0dce3;
+      border-radius: 14px;
+    }
+
+    .item span {
+      font-weight: bold;
+    }
+
+    .item a {
+      flex-shrink: 0;
+      padding: 11px 16px;
+      background: #eac6d2;
+      color: #543d47;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 45px;
+      text-align: center;
+      color: #907984;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    
+
+.outfit-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 25px auto;
+}
+
+.outfit-gallery img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .outfit-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .outfit-gallery img {
+    height: 450px;
+  }
+}
+
+    
+.zoomable {
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 15px;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../outfits.html">
+      Back to Outfits
+    </a>
+
+<header>
+  <h1>Friday Night, Three Ways 🖤</h1>
+  <p class="subtitle">
+    One Friday night, three different vibes.
+    From flirty and bold to classy and romantic,
+    there's a little something for every date night. 💋
+    <br>
+    💕 Shop my looks below!
+  </p>
+</header>
+
+<div class="outfit-gallery">
+  <img
+    src="../images/outfit-003_01.png"
+    alt="Sammy modeling Outfit 003 - Front"
+    class="zoomable"
+    tabindex="0"
+    role="button"
+  >
+
+  <img
+    src="../images/outfit-003_02.png"
+    alt="Sammy modeling Outfit 003 - Staged"
+    class="zoomable"
+    tabindex="0"
+    role="button"
+  >
+
+  <img
+    src="../images/outfit-003_03.png"
+    alt="Sammy modeling Outfit 003 - Flirty"
+    class="zoomable"
+    tabindex="0"
+    role="button"
+  >
+
+  <img
+    src="../images/outfit-003_04.png"
+    alt="Sammy modeling Outfit 003 - Statuesque"
+    class="zoomable"
+    tabindex="0"
+    role="button"
+  >
+</div>
+
+<!-- Fullscreen image popup -->
+<div id="imageLightbox" class="lightbox"
+     role="dialog" aria-modal="true"
+     aria-label="Outfit image viewer"
+     hidden>
+  <button class="lightbox-close"
+          type="button"
+          aria-label="Close image viewer">
+    &times;
+  </button>
+  <img id="lightboxImage" alt="">
+</div>
+
+
+<h2>Shop the Look</h2>
+
+
+    <section aria-label="Outfit shopping links">
+      <!-- Replace # with actual affiliate URLs -->
+
+      <div class="item">
+        <span>👚 Top</span>
+        <a href="https://link.amazon/B09Kkw8nv">Shop</a>
+      </div>
+
+      <div class="item">
+        <span>🖤 Skirt - Flirty & Bold</span>
+        <a href="https://link.amazon/B03fdIurf">Shop</a>
+      </div>
+
+      <div class="item">
+        <span>🖤 Skirt - Romantic & Playful</span>
+        <a href="https://link.amazon/B034AEPY7">Shop</a>
+      </div>
+
+      <div class="item">
+        <span>🖤 Skirt - Classy & Chic</span>
+        <a href="https://link.amazon/B0bc2h2CM">Shop</a>
+      </div>
+      
+      <div class="item">
+        <span>👟 Boot</span>
+        <a href="https://link.amazon/B09t61uG5">Shop</a>
+      </div>
+
+      <!-- <div class="item">
+        <span>👜 Accessories</span>
+        <a href="#">Shop</a>
+      </div> -->
+    </section>
+
+    <footer>
+      As an Amazon Associate I earn from
+      qualifying purchases.
+      <br>
+      Some links may earn commissions.
+      <br>
+      Sammy is a fictional AI-created influencer.
+      <br>
+      AI-generated outfits may feature
+      similar rather than identical products.
+      <br><br>
+      © 2026 Sammy's Looks
+    </footer>
+  </main>
+
+  
+<script>
+  const lightbox = document.getElementById("imageLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const closeButton = document.querySelector(".lightbox-close");
+  const galleryImages = document.querySelectorAll(".zoomable");
+
+  let previousFocus = null;
+
+  function openLightbox(img) {
+    previousFocus = document.activeElement;
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeButton.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightboxImage.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (previousFocus) previousFocus.focus();
+  }
+
+  galleryImages.forEach(img => {
+    img.addEventListener("click", () => openLightbox(img));
+
+    img.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(img);
+      }
+    });
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (lightbox.hidden) return;
+
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
+
+    if (e.key === "Tab") {
+      e.preventDefault();
+      closeButton.focus();
+    }
+  });
+
+  // Disable right-click on gallery and popup images
+  document.querySelectorAll(".zoomable, #lightboxImage")
+    .forEach(img => {
+      img.addEventListener("contextmenu", e => {
+        e.preventDefault();
+      });
+
+      img.addEventListener("dragstart", e => {
+        e.preventDefault();
+      });
+    });
+</script>
+
+</body>
+</html>
